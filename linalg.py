@@ -61,7 +61,7 @@ def cramers_rule(a, b):
     """ x = cramers_rule(a, b)
         performs cramers rule to solve a non-singular set of liear equations.
     """
-    x = np.zeros((a.shape[1], 1))
+    x = np.zeros(a.shape[1])
 
     for i in range(0, a.shape[1]):
         m = a.copy()
@@ -88,7 +88,7 @@ def LUdecomp(a,tol=1.0e-9):
     seq = np.array(range(n))
 
     # Set up scale factors
-    s = np.zeros((n))
+    s = np.zeros(n)
     for i in range(n):
         s[i] = max(abs(a[i,:]))
 
