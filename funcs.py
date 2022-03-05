@@ -1,7 +1,7 @@
 import sys
 from .exceptions import ArgumentError
 import numpy as np
-
+import deprecation
 
 """ err(string).
     Prints 'string' and terminates program.
@@ -54,6 +54,7 @@ def solve_sonic_flow(**kargs):
         else:
             raise ArgumentError("Too many variables defined")
 
+@deprecation.deprecated(details="Function moved to approx module")
 def derivative(f,method='central',h=1e-7):
     if method.lower() == 'central':
         return lambda x: (f(x+h) - f(x-h))/(2*h)
